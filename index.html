@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Education Matrix</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body{
+    height:100vh;
+    background:#000;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    overflow:hidden;
+    color:white;
+}
+
+/* Lightning flash */
+.flash{
+    position:fixed;
+    inset:0;
+    background:white;
+    opacity:0;
+    animation: lightning 4s infinite;
+}
+
+@keyframes lightning{
+    0%,95%,100%{opacity:0;}
+    96%{opacity:0.9;}
+    97%{opacity:0;}
+    98%{opacity:0.7;}
+}
+
+/* Container */
+.box{
+    text-align:center;
+    z-index:2;
+}
+
+/* Glitch text */
+.glitch{
+    font-size:42px;
+    position:relative;
+    color:#00fff0;
+    animation: glitch 1s infinite;
+}
+
+.glitch::before,
+.glitch::after{
+    content:attr(data-text);
+    position:absolute;
+    left:0;
+    width:100%;
+    background:black;
+}
+
+.glitch::before{
+    top:-2px;
+    color:#ff004c;
+    animation: glitchTop 0.8s infinite;
+}
+
+.glitch::after{
+    top:2px;
+    color:#00ff6a;
+    animation: glitchBottom 0.6s infinite;
+}
+
+@keyframes glitch{
+    0%{transform:skew(0deg);}
+    20%{transform:skew(2deg);}
+    40%{transform:skew(-2deg);}
+    60%{transform:skew(1deg);}
+    80%{transform:skew(-1deg);}
+    100%{transform:skew(0deg);}
+}
+
+@keyframes glitchTop{
+    0%{clip-path: inset(0 0 80% 0);}
+    50%{clip-path: inset(0 0 20% 0);}
+    100%{clip-path: inset(0 0 80% 0);}
+}
+
+@keyframes glitchBottom{
+    0%{clip-path: inset(80% 0 0 0);}
+    50%{clip-path: inset(20% 0 0 0);}
+    100%{clip-path: inset(80% 0 0 0);}
+}
+
+/* Button */
+button{
+    margin-top:30px;
+    padding:14px 35px;
+    font-size:18px;
+    background:transparent;
+    border:2px solid #00fff0;
+    color:#00fff0;
+    cursor:pointer;
+    border-radius:30px;
+    transition:0.3s;
+}
+
+button:hover{
+    background:#00fff0;
+    color:black;
+    box-shadow:0 0 20px #00fff0;
+}
+</style>
+</head>
+
+<body>
+
+<div class="flash"></div>
+
+<div class="box">
+    <h1 class="glitch" data-text="WELCOME TO THE ENGINEERING WORLD!">
+        WELCOME TO THE ENGINEERING WORLD!
+    </h1>
+
+    <button onclick="goNext()">ENTER ⚡</button>
+</div>
+
+<script>
+function goNext(){
+    window.location.href = "main.html";
+}
+</script>
+
+</body>
+</html>

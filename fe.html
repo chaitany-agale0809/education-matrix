@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>First Year Engineering</title>
+
+<style>
+/* 🌌 BACKGROUND */
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  background:
+    linear-gradient(rgba(2,6,23,0.85), rgba(2,6,23,0.85)),
+    url("image/fe.jpg");
+  background-size: cover;
+  background-position: center;
+  overflow-x: hidden;
+}
+
+/* 🧠 HEADER */
+.header {
+  padding: 25px 0;
+  overflow: hidden;
+}
+
+.header h1 {
+  color: #c7f9ff;
+  font-size: 32px;
+  white-space: nowrap;
+  animation: moveText 10s linear infinite;
+  text-shadow: 0 0 15px #c7f9ff;
+}
+
+@keyframes moveText {
+  from { transform: translateX(-100%); }
+  to   { transform: translateX(100%); }
+}
+
+/* 🐝 CONTAINER */
+.container {
+  width: 380px;
+  margin: 40px auto;
+}
+
+/* 🧩 ROWS */
+.row {
+  display: flex;
+  justify-content: center;
+  gap: 22px;
+  margin-bottom: 20px;
+}
+
+/* 🔶 HEXAGON */
+.hex {
+  width: 110px;
+  height: 110px;
+  clip-path: polygon(
+    25% 0%,
+    75% 0%,
+    100% 50%,
+    75% 100%,
+    25% 100%,
+    0% 50%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 18px;
+  color: #020617;
+  cursor: pointer;
+  transition: 0.35s ease;
+}
+
+/* 🌸 LIGHT PASTEL COLORS */
+.hex:nth-child(1)  { background: #e0f2fe; }
+.hex:nth-child(2)  { background: #dcfce7; }
+.hex:nth-child(3)  { background: #fef9c3; }
+.hex:nth-child(4)  { background: #ffedd5; }
+.hex:nth-child(5)  { background: #fce7f3; }
+.hex:nth-child(6)  { background: #ede9fe; }
+.hex:nth-child(7)  { background: #dbeafe; }
+.hex:nth-child(8)  { background: #cffafe; }
+.hex:nth-child(9)  { background: #ecfeff; }
+.hex:nth-child(10) { background: #ecfccb; }
+.hex:nth-child(11) { background: #ffe4e6; }
+.hex:nth-child(12) { background: #fdf4ff; }
+.hex:nth-child(13) { background: #e0e7ff; }
+
+/* ⚡ NEON GLOW ON HOVER */
+.hex:hover {
+  transform: scale(1.1);
+  box-shadow:
+    0 0 10px rgba(255,255,255,0.6),
+    0 0 20px rgba(255,255,255,0.6),
+    0 0 35px rgba(255,255,255,0.6);
+}
+</style>
+</head>
+
+<body>
+
+<!-- 🧠 HEADER -->
+<div class="header">
+  <h1>⚙️ FIRST YEAR ENGINEERING ⚙️</h1>
+</div>
+
+<!-- 🔷 HEXAGON LAYOUT -->
+<div class="container">
+
+  <!-- Row 1 -->
+  <div class="row">
+    <div class="hex">MATH I</div>
+    <div class="hex">PHYSICS</div>
+    <div class="hex">CHEMISTRY</div>
+  </div>
+
+  <!-- Row 2 -->
+  <div class="row">
+        <a href="fe_html_files/bxe.html" target="_blank">
+        <div class="hex">BXE</div></a>
+    <div class="hex">BEE</div>
+  </div>
+
+  <!-- Row 3 -->
+  <div class="row">
+    <div class="hex">GRAPHICS</div>
+    <div class="hex">MECHANICS</div>
+    <div class="hex">FPL</div>
+  </div>
+
+  <!-- Row 4 -->
+  <div class="row">
+    <div class="hex">MATH II</div>
+    <div class="hex">PPS</div>
+  </div>
+<hr>
+  
+  <!-- Row 5 -->
+  <div class="row">
+     
+    <div class="hex">CCC</div>
+      <a href="https://sppuquestionpapers.com/be/first-year-fe-engineering/semester-1" target="_blank">
+    <div class="hex">
+    PYQ
+    </div></a>
+    <div class="hex">RESULT</div>
+  </div>
+
+</div>
+
+</body>
+</html>

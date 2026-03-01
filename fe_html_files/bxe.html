@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Basic Electronics Engineering</title>
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+    transition: all 0.3s ease;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+    background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+}
+
+body.light{
+    background:linear-gradient(135deg,#e3f2fd,#ffffff);
+}
+
+.container{
+    width:100%;
+    max-width:600px;
+    border-radius:20px;
+    padding:40px 30px;
+    box-shadow:0 15px 35px rgba(0,0,0,0.3);
+    background:#ffffff;
+    animation:fadeIn 1s ease-in-out;
+}
+
+body:not(.light) .container{
+    background:#1e1e2f;
+}
+
+.header{
+    text-align:center;
+    margin-bottom:25px;
+}
+
+.header h1{
+    font-size:22px;
+}
+
+.header p{
+    font-size:14px;
+    margin-top:5px;
+    color:gray;
+}
+
+body:not(.light) .header h1,
+body:not(.light) .left{
+    color:white;
+}
+
+/* Toggle */
+.toggle{
+    position:absolute;
+    top:20px;
+    right:25px;
+    font-size:22px;
+    cursor:pointer;
+    color:white;
+}
+
+body.light .toggle{
+    color:#333;
+}
+
+/* Resource Card */
+.row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px;
+    margin:18px 0;
+    border-radius:15px;
+    background:#f4f6f9;
+    cursor:pointer;
+    position:relative;
+    overflow:hidden;
+}
+
+body:not(.light) .row{
+    background:#2a2a40;
+}
+
+/* Hover Lift */
+.row:hover{
+    transform:translateY(-6px);
+    box-shadow:0 15px 25px rgba(30,136,229,0.4);
+}
+
+/* Glow Border */
+.row::before{
+    content:"";
+    position:absolute;
+    width:100%;
+    height:100%;
+    border-radius:15px;
+    border:2px solid transparent;
+    top:0;
+    left:0;
+    pointer-events:none;
+}
+
+.row:hover::before{
+    border-color:#1e88e5;
+}
+
+/* Left */
+.left{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    font-weight:500;
+}
+
+.left i{
+    color:#e74c3c;
+    transition:0.3s;
+}
+
+/* Icon rotate */
+.row:hover .left i{
+    transform:rotate(15deg) scale(1.2);
+}
+
+/* Button */
+.btn{
+    text-decoration:none;
+    background:#1e88e5;
+    color:white;
+    padding:8px 18px;
+    border-radius:25px;
+    font-size:13px;
+    position:relative;
+    overflow:hidden;
+}
+
+.btn:hover{
+    background:#1565c0;
+    box-shadow:0 5px 15px rgba(21,101,192,0.5);
+}
+
+/* Ripple */
+.btn span{
+    position:absolute;
+    background:rgba(255,255,255,0.5);
+    border-radius:50%;
+    transform:scale(0);
+    animation:ripple 0.6s linear;
+}
+
+@keyframes ripple{
+    to{
+        transform:scale(4);
+        opacity:0;
+    }
+}
+
+@keyframes fadeIn{
+    from{opacity:0;}
+    to{opacity:1;}
+}
+
+/* Responsive */
+@media(max-width:500px){
+    .row{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:10px;
+    }
+    .btn{
+        width:100%;
+        text-align:center;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- Dark / Light Toggle -->
+<div class="toggle" onclick="toggleMode()">
+    <i id="modeIcon" class="fas fa-sun"></i>
+</div>
+
+<div class="container">
+
+    <div class="header">
+        <h1>Basic Electronics Engineering</h1>
+         <br>
+         <hr>
+    </div>
+
+    <div class="row">
+        <div class="left">
+            <i class="fas fa-file-pdf"></i>
+            subject content
+        </div>
+        <a href="../files/FE/bxe/bxe_subject_content.pdf" target="_blank" class="btn">
+            Download <i class="fas fa-download"></i>
+        </a>
+    </div>
+
+    <div class="row">
+        <div class="left">
+            <i class="fas fa-file-alt"></i>
+            paper pattern (2024 patern 60marks)
+        </div>
+        <a href="../files/FE/bxe/bxe_paper_patern.pdf" target="_blank" class="btn">
+            Download <i class="fas fa-download"></i>
+        </a>
+    </div>
+
+    <div class="row">
+        <div class="left">
+            <i class="fas fa-file-alt"></i>
+            Important Questions
+        </div>
+        <a href="..files/FE/bxe/bxe_imp_que.pdf" target="_blank" class="btn">
+            Download <i class="fas fa-download"></i>
+        </a>
+    </div>
+
+
+
+
+
+
+    <div class="row">
+        <div class="left">
+            <i class="fas fa-book"></i>
+            nothing
+        </div>
+        <a href="files/subject-contents.pdf" target="_blank" class="btn">
+            Download <i class="fas fa-download"></i>
+        </a>
+    </div>
+
+</div>
+
+<script>
+function toggleMode(){
+    document.body.classList.toggle("light");
+
+    let icon = document.getElementById("modeIcon");
+    if(document.body.classList.contains("light")){
+        icon.classList.remove("fa-sun");
+        icon.classList.add("fa-moon");
+    } else {
+        icon.classList.remove("fa-moon");
+        icon.classList.add("fa-sun");
+    }
+}
+
+/* Ripple Effect */
+document.querySelectorAll(".btn").forEach(button => {
+    button.addEventListener("click", function(e) {
+        let circle = document.createElement("span");
+        let diameter = Math.max(this.clientWidth, this.clientHeight);
+        let radius = diameter / 2;
+
+        circle.style.width = circle.style.height = diameter + "px";
+        circle.style.left = e.offsetX - radius + "px";
+        circle.style.top = e.offsetY - radius + "px";
+
+        this.appendChild(circle);
+
+        setTimeout(() => circle.remove(), 600);
+    });
+});
+</script>
+
+</body>
+</html>
