@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Admin Panel — Education Matrix</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif;}
+body{background:#f4f4f4;}
+.navbar{background:#ae921e;color:white;padding:15px 20px;display:flex;justify-content:space-between;align-items:center;position:fixed;top:0;width:100%;z-index:100;}
+.navbar h2{font-size:20px;}
+.logout{text-decoration:none;color:white;background:red;padding:8px 15px;border-radius:5px;font-size:14px;}
+.logout:hover{background:darkred;}
+.sidebar{width:220px;height:100vh;background:#162447;position:fixed;top:60px;left:0;}
+.sidebar a{display:block;color:white;text-decoration:none;padding:15px 20px;transition:0.3s;}
+.sidebar a:hover{background:#1f4068;}
+.container{margin-left:220px;padding:25px;margin-top:75px;}
+.stat-card{background:white;padding:25px;border-radius:10px;margin-bottom:20px;box-shadow:0 0 10px rgba(0,0,0,0.08);display:inline-block;min-width:200px;}
+.stat-card h3{color:#666;font-size:14px;margin-bottom:8px;text-transform:uppercase;letter-spacing:1px;}
+.stat-card .number{font-size:48px;font-weight:bold;color:#1e3c72;}
+.table-card{background:white;padding:25px;border-radius:10px;box-shadow:0 0 10px rgba(0,0,0,0.08);}
+.table-card h2{color:#1e3c72;margin-bottom:15px;font-size:18px;}
+table{width:100%;border-collapse:collapse;}
+th{background:#1e3c72;color:white;padding:12px;text-align:left;font-size:14px;}
+td{padding:12px;border-bottom:1px solid #eee;font-size:14px;color:#333;}
+tr:hover td{background:#f8f9ff;}
+@media(max-width:768px){.sidebar{display:none;}.container{margin-left:0;}}
+</style>
+</head>
+<body>
+<div class="navbar">
+  <h2>🛡️ Education Matrix — Admin Panel</h2>
+  <a href="/logout" class="logout">Logout</a>
+</div>
+<div class="sidebar">
+  <a href="#">📊 Dashboard</a>
+  <a href="/logout">🚪 Logout</a>
+</div>
+<div class="container">
+  <div class="stat-card">
+    <h3>Total Registered Users</h3>
+    <div class="number">{{ total_users }}</div>
+  </div>
+  <div class="table-card">
+    <h2>All Registered Users</h2>
+    <table>
+      <tr><th>ID</th><th>Name</th><th>Email</th></tr>
+      {% for user in users %}
+      <tr><td>{{ user[0] }}</td><td>{{ user[1] }}</td><td>{{ user[2] }}</td></tr>
+      {% endfor %}
+      {% if not users %}
+      <tr><td colspan="3" style="text-align:center;color:#999;padding:20px;">No users registered yet.</td></tr>
+      {% endif %}
+    </table>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>First Year Engineering — Education Matrix</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{min-height:100vh;font-family:Arial,sans-serif;background:linear-gradient(rgba(2,6,23,0.88),rgba(2,6,23,0.88)),url("/static/image/fe.jpg");background-size:cover;background-position:center;overflow-x:hidden;padding-bottom:30px;}
+.header{padding:22px 0;overflow:hidden;text-align:center;}
+.header h1{color:#c7f9ff;font-size:30px;white-space:nowrap;animation:moveText 12s linear infinite;text-shadow:0 0 15px #c7f9ff;display:inline-block;}
+@keyframes moveText{from{transform:translateX(-100%);}to{transform:translateX(100vw);}}
+.back-btn{display:inline-block;margin:10px 20px;color:#c7f9ff;text-decoration:none;font-size:14px;opacity:0.7;}
+.back-btn:hover{opacity:1;}
+.container{width:380px;margin:20px auto;}
+.section-label{color:#c7f9ff;text-align:center;font-size:12px;letter-spacing:3px;margin:18px 0 10px;opacity:0.7;}
+.row{display:flex;justify-content:center;gap:18px;margin-bottom:18px;flex-wrap:wrap;}
+.hex{width:105px;height:105px;clip-path:polygon(25% 0%,75% 0%,100% 50%,75% 100%,25% 100%,0% 50%);display:flex;align-items:center;justify-content:center;font-weight:bold;font-size:15px;color:#020617;cursor:pointer;transition:0.35s;text-align:center;padding:5px;}
+.hex:hover{transform:scale(1.12);box-shadow:0 0 10px rgba(255,255,255,0.6),0 0 25px rgba(255,255,255,0.4);}
+.hex:nth-child(1){background:#e0f2fe;}.hex:nth-child(2){background:#dcfce7;}.hex:nth-child(3){background:#fef9c3;}
+.hex:nth-child(4){background:#ffedd5;}.hex:nth-child(5){background:#fce7f3;}
+.hex-row2 .hex:nth-child(1){background:#ede9fe;}.hex-row2 .hex:nth-child(2){background:#dbeafe;}
+.hex-row3 .hex:nth-child(1){background:#cffafe;}.hex-row3 .hex:nth-child(2){background:#ecfccb;}.hex-row3 .hex:nth-child(3){background:#ffe4e6;}
+.hex-row4 .hex:nth-child(1){background:#fdf4ff;}.hex-row4 .hex:nth-child(2){background:#e0e7ff;}
+.hex-link-bxe{background:#e0f2fe !important;}
+.hex-link-ccc{background:#dcfce7 !important;}
+.hex-link-pyq{background:#fef9c3 !important;}
+.hex-link-res{background:#ffedd5 !important;}
+.divider{border:none;border-top:1px solid rgba(255,255,255,0.15);margin:15px 40px;}
+a{text-decoration:none;color:inherit;}
+@media(max-width:420px){.container{width:100%;padding:0 10px;}.hex{width:88px;height:88px;font-size:13px;}}
+</style>
+</head>
+<body>
+<div class="header"><h1>⚙️ FIRST YEAR ENGINEERING — F.E ⚙️</h1></div>
+<a href="/edu/main" class="back-btn">← Back to Years</a>
+<div class="container">
+  <p class="section-label">CORE SUBJECTS</p>
+  <div class="row">
+    <div class="hex">MATH I</div>
+    <div class="hex">PHYSICS</div>
+    <div class="hex">CHEMISTRY</div>
+  </div>
+  <div class="row hex-row2">
+    <a href="/edu/fe/bxe"><div class="hex hex-link-bxe">BXE</div></a>
+    <div class="hex">BEE</div>
+  </div>
+  <div class="row hex-row3">
+    <div class="hex">GRAPHICS</div>
+    <div class="hex">MECHANICS</div>
+    <div class="hex">FPL</div>
+  </div>
+  <div class="row hex-row4">
+    <div class="hex">MATH II</div>
+    <div class="hex">PPS</div>
+  </div>
+  <hr class="divider">
+  <p class="section-label">RESOURCES & ACTIVITIES</p>
+  <div class="row">
+    <a href="/edu/fe/ccc"><div class="hex hex-link-ccc">CCC</div></a>
+    <a href="https://sppuquestionpapers.com/be/first-year-fe-engineering" target="_blank"><div class="hex hex-link-pyq">PYQ</div></a>
+    <a href="https://beta.unipune.ac.in/university_files/results.htm" target="_blank"><div class="hex hex-link-res">Results</div></a>
+  </div>
+</div>
+</body>
+</html>

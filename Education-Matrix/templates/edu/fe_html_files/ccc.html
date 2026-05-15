@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Co-Curricular Activities — CCC</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;transition:all 0.3s ease;}
+body{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:20px;background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);}
+body.light{background:linear-gradient(135deg,#e3f2fd,#ffffff);}
+.container{width:100%;max-width:600px;border-radius:20px;padding:40px 30px;box-shadow:0 15px 35px rgba(0,0,0,0.3);background:#1e1e2f;animation:fadeIn 0.8s ease-in-out;}
+body.light .container{background:#ffffff;}
+.header{text-align:center;margin-bottom:25px;}
+.header h1{font-size:22px;color:white;}
+body.light .header h1{color:#1e3c72;}
+.header p{font-size:14px;margin-top:5px;color:gray;}
+.toggle{position:fixed;top:20px;right:25px;font-size:22px;cursor:pointer;color:white;z-index:10;}
+body.light .toggle{color:#333;}
+.row{display:flex;justify-content:space-between;align-items:center;padding:18px;margin:15px 0;border-radius:15px;background:#2a2a40;cursor:pointer;position:relative;overflow:hidden;}
+body.light .row{background:#f4f6f9;}
+.row:hover{transform:translateY(-5px);box-shadow:0 12px 25px rgba(30,136,229,0.4);}
+.row::before{content:"";position:absolute;inset:0;border-radius:15px;border:2px solid transparent;pointer-events:none;}
+.row:hover::before{border-color:#1e88e5;}
+.left{display:flex;align-items:center;gap:12px;font-weight:500;color:white;}
+body.light .left{color:#333;}
+.left i{color:#e74c3c;}
+.row:hover .left i{transform:rotate(15deg) scale(1.2);}
+.btn{text-decoration:none;background:#1e88e5;color:white;padding:8px 18px;border-radius:25px;font-size:13px;white-space:nowrap;}
+.btn:hover{background:#1565c0;box-shadow:0 5px 15px rgba(21,101,192,0.5);}
+@keyframes fadeIn{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+.back-link{margin-top:20px;color:#1e88e5;text-decoration:none;font-size:14px;}
+.back-link:hover{text-decoration:underline;}
+@media(max-width:500px){.row{flex-direction:column;align-items:flex-start;gap:10px;}.btn{width:100%;text-align:center;}}
+</style>
+</head>
+<body>
+<div class="toggle" onclick="toggleMode()"><i id="modeIcon" class="fas fa-sun"></i></div>
+<div class="container">
+  <div class="header">
+    <h1>🏆 Co-Curricular Activities</h1>
+    <p>CCC — First Year SPPU</p>
+    <hr style="margin-top:15px;border-color:rgba(255,255,255,0.1);">
+  </div>
+  <div class="row">
+    <div class="left"><i class="fas fa-cricket-ball fa-fw"></i>Physical Fitness — Cricket</div>
+    <a href="/edu/files/FE/ccc/cricket.pdf" target="_blank" class="btn">Download <i class="fas fa-download"></i></a>
+  </div>
+  <div class="row">
+    <div class="left"><i class="fas fa-music fa-fw"></i>Music Composition</div>
+    <a href="/edu/files/FE/ccc/music_composition.pdf" target="_blank" class="btn">Download <i class="fas fa-download"></i></a>
+  </div>
+  <div class="row">
+    <div class="left"><i class="fas fa-futbol fa-fw"></i>Football</div>
+    <a href="/edu/files/FE/ccc/football.pdf" target="_blank" class="btn">Download <i class="fas fa-download"></i></a>
+  </div>
+  <div class="row" style="opacity:0.5;cursor:default;">
+    <div class="left"><i class="fas fa-clock fa-fw"></i>More Activities</div>
+    <span class="btn" style="background:#666;">In Progress</span>
+  </div>
+</div>
+<a href="/edu/fe" class="back-link">← Back to F.E Subjects</a>
+<script>
+function toggleMode(){
+  document.body.classList.toggle("light");
+  let icon=document.getElementById("modeIcon");
+  icon.classList.toggle("fa-sun");
+  icon.classList.toggle("fa-moon");
+}
+</script>
+</body>
+</html>
